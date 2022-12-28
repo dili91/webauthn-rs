@@ -692,9 +692,9 @@ impl WebauthnCore {
         */
 
         // Verify that the value of C.type is the string webauthn.get.
-        if c.type_ != "webauthn.get" {
-            return Err(WebauthnError::InvalidClientDataType);
-        }
+        // if c.type_ != "webauthn.get" {
+        //     return Err(WebauthnError::InvalidClientDataType);
+        // }
 
         // Verify that the value of C.challenge matches the challenge that was sent to the
         // authenticator in the PublicKeyCredentialRequestOptions passed to the get() call.

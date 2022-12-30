@@ -107,9 +107,22 @@ where
 
         // If sameOriginWithAncestors is false, return a "NotAllowedError" DOMException.
         // We just don't take this value.
+        
+        //TODO: SCP requires a modification of the above step: 
+        // If sameOriginWithAncestors is false:
+        // If the relevant global object, as determined by the calling create() implementation, does not have transient activation:
+        // Return a DOMException whose name is "SecurityError", and terminate this algorithm.
+        // Consume user activation of the relevant global object.
 
         // Let options be the value of options.publicKey.
         let options = options.public_key;
+
+        //TODO: SCP requires additional checks here: 
+        // If any of the following are true:
+        // options["authenticatorSelection"]["authenticatorAttachment"] is not "platform".
+        // options["authenticatorSelection"]["residentKey"] is not "required" or "preferred".
+        // options["authenticatorSelection"]["userVerification"] is not "required".
+        // then return a TypeError.
 
         // If the timeout member of options is present, check if its value lies within a reasonable range as defined by the client and if not, correct it to the closest value lying within that range. Set a timer lifetimeTimer to this adjusted value. If the timeout member of options is not present, then set lifetimeTimer to a client-specific default.
         let timeout_ms = options

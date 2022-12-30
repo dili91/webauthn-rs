@@ -107,7 +107,7 @@ where
 
         // If sameOriginWithAncestors is false, return a "NotAllowedError" DOMException.
         // We just don't take this value.
-        
+
         //TODO: SCP requires a modification of the above step: 
         // If sameOriginWithAncestors is false:
         // If the relevant global object, as determined by the calling create() implementation, does not have transient activation:
@@ -177,6 +177,8 @@ where
         origin: Url,
         options: RequestChallengeResponse,
     ) -> Result<PublicKeyCredential, WebauthnCError> {
+        //TODO: review what needs to be fixed here for SPC
+
         // Assert: options.publicKey is present.
         // This is asserted through rust types.
 

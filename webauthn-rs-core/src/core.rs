@@ -691,6 +691,7 @@ impl WebauthnCore {
             C’s components are referenceable, as required by this algorithm.
         */
 
+        //FIXME: this needs to be compatible with both Webauthn and SPC
         // Verify that the value of C.type is the string webauthn.get.
         // if c.type_ != "webauthn.get" {
         //     return Err(WebauthnError::InvalidClientDataType);

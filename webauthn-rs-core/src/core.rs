@@ -96,7 +96,7 @@ impl WebauthnCore {
             authenticator_timeout: authenticator_timeout.unwrap_or(AUTHENTICATOR_TIMEOUT),
             require_valid_counter_value: true,
             ignore_unsupported_attestation_formats: true,
-            allow_cross_origin: false,
+            allow_cross_origin: true, //FIXME
             allow_subdomains_origin: allow_subdomains_origin.unwrap_or(false),
             allow_any_port: allow_any_port.unwrap_or(false),
         }
